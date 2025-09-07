@@ -1,0 +1,185 @@
+/* See previous response for full CSS. Key features: circular Buddha/Shiva images, gray Suryansh-X text (via #typewriter), animated gradients, etc. */
+:root {
+  --radius: 20px;
+  --header-bg1: #2b62f6;
+  --header-bg2: #f59e42;
+  --header-bg3: #c0a4ff;
+  --header-bg4: #ffd8ec;
+  --header-bg5: #f7ad65;
+  --header-bg6: #6b9cff;
+  --card-bg: #23253a;
+  --text: #f3f3f7;
+  --accent: #f59e42;
+  --gold: #ffd700;
+  --silver: #babfc9;
+  --glass-bg: rgba(36, 40, 56, 0.32);
+  --glass-blur: blur(18px);
+  --orange: #f59e42;
+  --blue: #2563eb;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  min-height: 100vh;
+  color: var(--text);
+  background: #18181b;
+  overflow-x: hidden;
+  position: relative;
+}
+.digital-clock {
+  position: fixed;
+  top: 24px;
+  right: 38px;
+  z-index: 9999;
+  background: linear-gradient(90deg, #ff90b3 0%, #2563eb 100%);
+  color: #fff;
+  padding: 0.6em 1em;
+  font-family: 'Montserrat', 'Roboto Mono', monospace;
+  font-size: 1.35em;
+  font-weight: 700;
+  border-radius: 18px;
+  box-shadow: 0 2px 18px #ff356244;
+  letter-spacing: 2.5px;
+  user-select: none;
+  border: none;
+  transition: background 2.5s;
+  animation: clockBgAnim 9s infinite alternate;
+}
+@keyframes clockBgAnim {
+  0%   { background: linear-gradient(90deg, #ff90b3 0%, #2563eb 100%);}
+  50%  { background: linear-gradient(90deg, #2563eb 0%, #ff3562 100%);}
+  100% { background: linear-gradient(90deg, #ff90b3 0%, #2563eb 100%);}
+}
+header {
+  text-align: center;
+  padding: 2.7rem 1rem 1.3rem;
+  background: linear-gradient(120deg, var(--header-bg1) 0%, var(--header-bg3) 50%, var(--header-bg5) 100%);
+  background-size: 200% 200%;
+  animation: headerBgAnim 14s ease-in-out infinite alternate;
+  color: #fff;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  position: relative;
+  overflow: visible;
+}
+@keyframes headerBgAnim {
+  0%   { background-position: 0% 50%; }
+  30%  { background-position: 50% 50%; }
+  60%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.profile-photo-ring {
+  display: inline-block;
+  padding: 7px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffd700 60%, #fff7c0 100%);
+  box-shadow: 0 0 22px #ffd700;
+  margin-bottom: 1.1rem;
+  position: relative;
+  z-index: 3;
+}
+.profile-photo {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff8c0;
+  box-shadow: 0 0 10px #ffd70099;
+  background: #fff;
+  z-index: 3;
+}
+#particles-silver {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  z-index: 9;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: visible;
+}
+#typewriter {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.6rem;
+  height: 3.2rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: #babfc9 !important;
+  background: none;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .18em solid #babfc9;
+  z-index: 5;
+  position: relative;
+  margin-bottom: 10px;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding: .5rem 0;
+  border-radius: 35px;
+  background: var(--glass-bg);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1.5px solid rgba(255, 255, 255, 0.13);
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.13rem;
+  font-weight: bold;
+  padding: .5rem 1.2rem;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #ff90b3 0%, #2563eb 100%);
+  background-size: 200% 200%;
+  box-shadow: 0 2px 8px rgba(59,130,246,0.10);
+  transition: background 2.5s cubic-bezier(.77,.2,.48,.95), color .18s, box-shadow .18s, border .5s;
+  border: 3px solid transparent;
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  animation: navBgAnim 8s ease-in-out infinite alternate;
+  position: relative;
+  z-index: 2;
+}
+@keyframes navBgAnim {
+  0%   { background: linear-gradient(90deg, #ff90b3 0%, #2563eb 100%);}
+  25%  { background: linear-gradient(90deg, #ff3562 0%, #e946ff 100%);}
+  50%  { background: linear-gradient(90deg, #e946ff 0%, #ff90b3 100%);}
+  75%  { background: linear-gradient(90deg, #2563eb 0%, #ff90b3 100%);}
+  100% { background: linear-gradient(90deg, #ff90b3 0%, #2563eb 100%);}
+}
+nav a:focus, nav a:hover {
+  outline: none;
+  color: #fff;
+  border: 3px solid;
+  border-image: linear-gradient(90deg,#ff3562,#e946ff,#ff90b3,#e946ff,#ff3562) 1;
+  animation: navBtnGradient 1.5s linear infinite;
+  box-shadow: 0 0 0 8px #ff3562aa;
+}
+@keyframes navBtnGradient {
+  0% {border-image: linear-gradient(90deg,#ff3562,#e946ff,#ff90b3) 1;}
+  50% {border-image: linear-gradient(270deg,#e946ff,#ff90b3,#ff3562) 1;}
+  100% {border-image: linear-gradient(90deg,#ff3562,#e946ff,#ff90b3) 1;}
+}
+.buddha-img, .shiv-img {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff8c0;
+  box-shadow: 0 0 14px #ffd70099;
+  background: #fff;
+  margin-bottom: 0.6em;
+}
+#typewriter {
+  color: #babfc9 !important;
+}
