@@ -858,57 +858,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.addEventListener('scroll', revealSectionsOnScroll);
     window.addEventListener('DOMContentLoaded', revealSectionsOnScroll);
     window.addEventListener('resize', revealSectionsOnScroll);
-  </script>
-(function() {
-  const colors = [
-    '#ff90b3', '#ffd700', '#2563eb', '#f59e42', '#e946ff', '#32ffc6',
-    '#babfc9', '#ff3562', '#c0a4ff', '#6b9cff'
-  ];
-
-  function sprinkle(x, y) {
-    const numParticles = 18;
-    for (let i = 0; i < numParticles; i++) {
-      const p = document.createElement('div');
-      const size = 6 + Math.random()*6;
-      p.style.position = 'fixed';
-      p.style.pointerEvents = 'none';
-      p.style.left = `${x - size/2}px`;
-      p.style.top = `${y - size/2}px`;
-      p.style.width = `${size}px`;
-      p.style.height = `${size}px`;
-      p.style.borderRadius = '50%';
-      p.style.background = colors[Math.floor(Math.random()*colors.length)];
-      p.style.boxShadow = `0 0 12px ${p.style.background}`;
-      p.style.zIndex = 99999;
-      p.style.opacity = 1;
-
-      // Random direction and speed
-      const angle = Math.random() * 2 * Math.PI;
-      const distance = 36 + Math.random() * 32;
-      const dx = Math.cos(angle) * distance;
-      const dy = Math.sin(angle) * distance;
-
-      // Animate
-      p.animate([
-        { transform: 'translate(0,0)', opacity: 1 },
-        { transform: `translate(${dx}px,${dy}px)`, opacity: 0 }
-      ], {
-        duration: 850 + Math.random()*350,
-        easing: 'cubic-bezier(.6,-0.3,.7,1.4)'
-      });
-
-      document.body.appendChild(p);
-
-      setTimeout(() => {
-        p.remove();
-      }, 900);
-    }
-  }
-
-  document.addEventListener('click', function(e) {
-    sprinkle(e.clientX, e.clientY);
-  });
-})();
+    
 </script>
 </body>
 </html>
