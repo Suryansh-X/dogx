@@ -161,14 +161,14 @@ nav a:focus, nav a:hover {
   outline: none;
   color: #fff;
   border: 3px solid;
-  border-image: linear-gradient(90deg,#ff3562,#e946ff,#ff90b3,#e946ff,#ff3562) 1;
+  border-image: radial-gradient(90deg,#ff3562,#e946ff,#ff90b3,#e946ff,#ff3562) 1;
   animation: navBtnGradient 4.5s ease-in-out infinite alternate;
   box-shadow: 0 0 0 8px #ff3562aa;
 }
 @keyframes navBtnGradient {
-  0% {border-image: linear-gradient(90deg,#ff3562,#e946ff,#ff90b3) 1;}
-  50% {border-image: linear-gradient(270deg,#e946ff,#ff90b3,#ff3562) 1;}
-  100% {border-image: linear-gradient(90deg,#ff3562,#e946ff,#ff90b3) 1;}
+  0% {border-image: radial-gradient(90deg,#ff3562,#e946ff,#ff90b3) 1;}
+  50% {border-image: radial-gradient(270deg,#e946ff,#ff90b3,#ff3562) 1;}
+  100% {border-image: radial-gradient(90deg,#ff3562,#e946ff,#ff90b3) 1;}
 }
 .buddha-img, .shiv-img {
   width: 108px;
